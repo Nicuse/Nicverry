@@ -496,12 +496,6 @@ local library = {
 		unhoveredOptionBottom = Color3.fromRGB(35, 35, 35),
 		tabText = Color3.fromRGB(185, 185, 185)
 	},
-	gui_parent = (function()
-		pcall(function()
-		return game:GetService("CoreGui")
-		end)
-		game:GetService("Players").LocalPlayer:Kick("get a better executor")
-	end)(),
 	colorpicker = false,
 	colorpickerconflicts = {},
 	rainbowflags = {},
@@ -2009,7 +2003,7 @@ function library:CreateWindow(options, ...)
 		submenuOpen = submenuOpen
 	}
 	pepsiLibrary.Name = "     "
-	pepsiLibrary.Parent = library.gui_parent
+	pepsiLibrary.Parent = game:GetService("CoreGui")
 	pepsiLibrary.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	pepsiLibrary.DisplayOrder = 10
 	pepsiLibrary.ResetOnSpawn = false
